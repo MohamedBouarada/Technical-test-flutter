@@ -1,8 +1,11 @@
 // ignore_for_file: unnecessary_new, prefer_const_constructors, annotate_overrides, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
+
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize => new Size.fromHeight(70);
+  final String title;
+  MyAppBar({required this.title});
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -14,8 +17,8 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
         onPressed: null,
       ),
-      title: const Text(
-        'Child first name',
+      title: Text(
+        title,
         style: TextStyle(
           color: Colors.black,
           fontSize: 18,
@@ -31,7 +34,6 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
           onPressed: null,
         ),
-       
       ],
       centerTitle: true,
       backgroundColor: Color.fromRGBO(63, 99, 169, 1),

@@ -3,15 +3,21 @@ import 'package:flutter/material.dart';
 class BottomBar extends StatefulWidget {
   @override
   _BottomBarState createState() => _BottomBarState();
+  final int selectedIndex;
+  BottomBar({required this.selectedIndex});
 }
 
 class _BottomBarState extends State<BottomBar> {
-  int _selectedIndex = 0;
+  late int _selectedIndex = widget.selectedIndex;
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
+  }
+  void initState() {
+    super.initState();
+    
   }
 
   @override
@@ -23,18 +29,22 @@ class _BottomBarState extends State<BottomBar> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            buildBottomNavigationBarItem(Icons.phone_android, 'Dashbaord', 0),
-            buildBottomNavigationBarItem(Icons.phone_android, 'Phone usage', 1),
             buildBottomNavigationBarItem(
-                Icons.phone_android, 'Social media', 2),
-            buildBottomNavigationBarItem(Icons.phone_android, 'Alerts', 3),
+                Icons.phone_android, 'Dashbaord', 0, '/childDashboard'),
+            buildBottomNavigationBarItem(
+                Icons.phone_android, 'Phone usage', 1, '/applicationList'),
+            buildBottomNavigationBarItem(
+                Icons.phone_android, 'Social media', 2, '/childDashboard'),
+            buildBottomNavigationBarItem(
+                Icons.phone_android, 'Alerts', 3, '/childDashboard'),
           ],
         ),
       ),
     );
   }
 
-  Widget buildBottomNavigationBarItem(IconData icon, String label, int index) {
+  Widget buildBottomNavigationBarItem(
+      IconData icon, String label, int index, String route) {
     final isSelected = _selectedIndex == index;
     final backgroundColor =
         isSelected ? Color.fromRGBO(63, 119, 182, 1) : Colors.transparent;
@@ -44,7 +54,10 @@ class _BottomBarState extends State<BottomBar> {
 
     return Expanded(
       child: InkWell(
-        onTap: () => _onItemTapped(index),
+        onTap: () {
+          _onItemTapped(index);
+          Navigator.pushNamed(context, route);
+        },
         child: ClipRRect(
           borderRadius: borderRadius,
           child: Container(

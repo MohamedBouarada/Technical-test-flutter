@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:test_technique/Bienvenu.dart';
+import 'package:test_technique/applicationList.dart';
+import 'package:test_technique/childDashboard.dart';
 import 'package:test_technique/signupPage.dart';
 import 'package:test_technique/loginPage.dart';
 
@@ -34,6 +36,8 @@ class MyApp extends StatelessWidget {
         LoginPage.routName: (ctx) => LoginPage(),
         SignupPage.routName: (ctx) => SignupPage(),
         Bienvenu.routName:(ctx) => Bienvenu(),
+        ChildDashboard.routName:(ctx)=> ChildDashboard(),
+        ApplicationList.routName:(ctx)=> ApplicationList(),
       },
     );
   }
