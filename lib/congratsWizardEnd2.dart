@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_technique/addChild.dart';
 import 'package:test_technique/addProfile.dart';
+import 'package:test_technique/childDashboard.dart';
 
 class CongratsWizardEnd2 extends StatelessWidget {
   const CongratsWizardEnd2({Key? key}) : super(key: key);
@@ -69,10 +70,10 @@ class CongratsWizardEnd2 extends StatelessWidget {
                       child: FlatButton(
                         height: 50,
                         onPressed: () {
-                          //  Navigator.push(
-                          //         context,
-                          //         MaterialPageRoute(
-                          //             builder: (context) => SpaceChose()));
+                           Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ChildDashboard()));
                         },
                         color: const Color.fromRGBO(255, 255, 255, 1),
                         shape: RoundedRectangleBorder(

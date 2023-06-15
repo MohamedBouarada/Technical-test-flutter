@@ -1,4 +1,5 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_final_fields, deprecated_member_use, body_might_complete_normally_nullable
+
+// ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
 import 'package:test_technique/spaceChose.dart';
@@ -116,12 +117,10 @@ class _LoginCardState extends State<LoginCard> {
                   ),
                 ),
                 validator: (value) {
-                  // if (value!.isEmpty || !value.contains('@')) {
-                  //   return 'Invalid Email';
-                  // }
+                  
                 },
                 onSaved: (newValue) {
-                  // _authData['email'] = newValue!;
+                 
                 },
                 autovalidateMode: AutovalidateMode.onUserInteraction,
               ),
@@ -147,12 +146,10 @@ class _LoginCardState extends State<LoginCard> {
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 obscureText: true,
                 validator: (value) {
-                  // if (value!.isEmpty) {
-                  //   return 'Password is invalid';
-                  // }
+                 
                 },
                 onSaved: (newValue) {
-                  _authData['password'] = newValue!;
+                 
                 },
               ),
               SizedBox(
