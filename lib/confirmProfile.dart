@@ -3,9 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:test_technique/addProfile.dart';
 
-class AddDevice extends StatelessWidget {
-  const AddDevice({Key? key}) : super(key: key);
-  static const routName = '/AddDevice';
+class ConfirmProfile extends StatelessWidget {
+  const ConfirmProfile({Key? key}) : super(key: key);
+  static const routName = '/ConfirmProfile';
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class AddDevice extends StatelessWidget {
                       //   height: 25,
                       // ),
                       Text(
-                        "Please add your child’s devices",
+                        "Your child’s profile information has been successfully added",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Color.fromRGBO(255, 255, 255, 1),
@@ -43,39 +43,25 @@ class AddDevice extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
-                      Text(
-                        "The information from your child’s device will help us to assess their mental health, duration of sleep, places visited, used applications  etc. It also gives you the ability to block or allow installed applications",
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          color: Color.fromRGBO(255, 255, 255, 0.86),
-                          fontSize: 15,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "Please follow the following steps:\n 1.Bring your child’s mobile phone\n 2.Scan this QR code with your child’s device camera\n 3.You will be redirected to the 4IN shield application download page\n 4.Once the application is installed, click Next ",
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          color: Color.fromRGBO(255, 255, 255, 0.86),
-                          fontSize: 17,
-                          fontWeight: FontWeight.w400,
+                      Container(
+                        height: 109,
+                        width: 87,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/Vector.png'),
+                          ),
                         ),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(
-                  height: 5,
-                ),
+               
                 Container(
-                  height: 169,
-                  width: 206,
+                  height: MediaQuery.of(context).size.width *2/3,
+                  width: MediaQuery.of(context).size.width *2/3,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/frame1.png'),
+                      image: AssetImage('assets/photo2.png'),
                     ),
                   ),
                 ),
@@ -87,12 +73,11 @@ class AddDevice extends StatelessWidget {
                   children: [
                     Container(
                       // padding: const EdgeInsets.only(top: 3, left: 3),
-                      width: 130,
+                      
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
                       ),
-                      child: MaterialButton(
-                        minWidth: 105,
+                      child: FlatButton(
                         height: 50,
                         onPressed: () {
                           //  Navigator.push(
@@ -101,22 +86,19 @@ class AddDevice extends StatelessWidget {
                           //             builder: (context) => SpaceChose()));
                         },
                         color: const Color.fromRGBO(255, 255, 255, 1),
-                        elevation: 10,
+                        
                         shape: RoundedRectangleBorder(
                           side: const BorderSide(color: Colors.white),
                           borderRadius: BorderRadius.circular(8),
                         ),
-                        child: 
-                            Text(
-                              "Skip",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 18,
-                                color: Color.fromRGBO(63, 119, 182, 1),
-                              ),
-                            ),
-                            
-                        
+                        child: Text(
+                          "Add new profile",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 18,
+                            color: Color.fromRGBO(63, 119, 182, 1),
+                          ),
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -124,21 +106,20 @@ class AddDevice extends StatelessWidget {
                     ),
                     Container(
                       // padding: const EdgeInsets.only(top: 3, left: 3),
-                      width: 130,
+                      
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
+                        borderRadius: BorderRadius.circular(8),
                       ),
-                      child: MaterialButton(
-                        minWidth: 105,
+                      child: FlatButton(
                         height: 50,
                         onPressed: () {
-                           Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => AddProfile()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => AddProfile()));
                         },
                         color: const Color.fromRGBO(255, 255, 255, 1),
-                        elevation: 10,
+                        
                         shape: RoundedRectangleBorder(
                           side: const BorderSide(color: Colors.white),
                           borderRadius: BorderRadius.circular(8),
@@ -147,9 +128,9 @@ class AddDevice extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const <Widget>[
                             Text(
-                              "Next",
+                              "Continue",
                               style: TextStyle(
-                                fontWeight: FontWeight.w700,
+                                fontWeight: FontWeight.w400,
                                 fontSize: 18,
                                 color: Color.fromRGBO(63, 119, 182, 1),
                               ),
@@ -168,6 +149,37 @@ class AddDevice extends StatelessWidget {
                     ),
                   ],
                 ),
+                
+                 Container(
+                      // padding: const EdgeInsets.only(top: 3, left: 3),
+                      
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      child: FlatButton(
+                        height: 50,
+                        onPressed: () {
+                          //  Navigator.push(
+                          //         context,
+                          //         MaterialPageRoute(
+                          //             builder: (context) => SpaceChose()));
+                        },
+                        color: const Color.fromRGBO(255, 255, 255, 1),
+                        
+                        shape: RoundedRectangleBorder(
+                          side: const BorderSide(color: Colors.white),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Text(
+                          "Modify profile information",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 18,
+                            color: Color.fromRGBO(63, 119, 182, 1),
+                          ),
+                        ),
+                      ),
+                    ),
               ],
             ),
           ),

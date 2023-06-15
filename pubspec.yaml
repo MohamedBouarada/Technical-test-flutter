@@ -62,6 +62,10 @@ flutter:
     - assets/MicrosoftTeams-image.png
     - assets/chatting1.png
     - assets/frame1.png
+    - assets/photo.png
+    - assets/photo2.png
+    - assets/Vector.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
