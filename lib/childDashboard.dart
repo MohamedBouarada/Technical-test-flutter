@@ -27,7 +27,7 @@ class _ChildDashboardState extends State<ChildDashboard> {
             decoration: const BoxDecoration(
               color: Color.fromRGBO(63, 99, 169, 1),
             ),
-            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 120),
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 60),
             child: Column(
               // crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
@@ -89,8 +89,8 @@ class _ChildDashboardState extends State<ChildDashboard> {
                       ),
                     ),
                     SizedBox(
-                  width: 20,
-                ),
+                      width: 20,
+                    ),
                     GestureDetector(
                       onTap: () {
                         setState(() {
@@ -118,8 +118,8 @@ class _ChildDashboardState extends State<ChildDashboard> {
                       ),
                     ),
                     SizedBox(
-                  width: 20,
-                ),
+                      width: 20,
+                    ),
                     GestureDetector(
                       onTap: () {
                         setState(() {
@@ -151,46 +151,316 @@ class _ChildDashboardState extends State<ChildDashboard> {
                 SizedBox(
                   height: 30,
                 ),
-                Container(
-                  // padding: const EdgeInsets.only(top: 3, left: 3),
-                  width: 140,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                  child: MaterialButton(
-                    minWidth: 111,
-                    height: 50,
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => AddDevice()));
-                    },
-                    color: const Color.fromRGBO(255, 255, 255, 1),
-                    elevation: 10,
-                    shape: RoundedRectangleBorder(
-                      side: const BorderSide(color: Colors.white),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Row(
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const <Widget>[
-                        Text(
-                          "Start",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 18,
-                            color: Color.fromRGBO(63, 119, 182, 1),
+                      children: [
+                        Container(
+                          height: 90,
+                          width: 150,
+                          padding: EdgeInsets.all(10),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Danger Level",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Color.fromRGBO(38, 38, 38, 0.59),
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 6,
+                              ),
+                              Text(
+                                "High",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Color.fromRGBO(255, 5, 5, 0.59),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                         SizedBox(
-                          width: 7,
+                          width: 30,
                         ),
-                        Icon(
-                          Icons.keyboard_arrow_right,
-                          color: Color.fromRGBO(63, 119, 182, 1),
-                          size: 26.0,
+                        Container(
+                          height: 90,
+                          width: 150,
+                          padding: EdgeInsets.all(10),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Last night Sleep duration",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Color.fromRGBO(38, 38, 38, 0.59),
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 6,
+                              ),
+                              Text(
+                                "8h",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Color.fromRGBO(38, 38, 38, 0.59),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          height: 90,
+                          width: 150,
+                          padding: EdgeInsets.all(10),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Device usage",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Color.fromRGBO(38, 38, 38, 0.59),
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 6,
+                              ),
+                              Text(
+                                "4h",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Color.fromRGBO(38, 38, 38, 0.59),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          width: 30,
+                        ),
+                        Container(
+                          height: 90,
+                          width: 150,
+                          padding: EdgeInsets.all(10),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Phone call duration",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Color.fromRGBO(38, 38, 38, 0.59),
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 6,
+                              ),
+                              Text(
+                                "4h",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Color.fromRGBO(38, 38, 38, 0.59),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.all(10),
+                  // alignment: Alignment.topLeft,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Last Alerts",
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                          color: Color.fromRGBO(38, 38, 38, 0.86),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 6,
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  right: BorderSide(
+                                    color: Color.fromRGBO(93, 74, 255, 1),
+                                    width: 2.0,
+                                  ),
+                                ),
+                              ),
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text(
+                                        "Toxic comment!",
+                                        textAlign: TextAlign.left,
+                                        style: TextStyle(
+                                          color:
+                                              Color.fromRGBO(255, 7, 7, 0.86),
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                      ),
+                                      Spacer(),
+                                      Text(
+                                        "12:34 PM",
+                                        textAlign: TextAlign.left,
+                                        style: TextStyle(
+                                          color:
+                                              Color.fromRGBO(38, 38, 38, 0.35),
+                                          fontSize: 10,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                  Text(
+                                    "Mama always said life was like a box of chocolates. You never know what…",
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                      color: Color.fromRGBO(38, 38, 38, 0.59),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            
+                            
+                            SizedBox(
+                              height: 6,
+                            ),
+                            
+                            Container(
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  right: BorderSide(
+                                    color: Color.fromRGBO(93, 74, 255, 1),
+                                    width: 2.0,
+                                  ),
+                                ),
+                              ),
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text(
+                                        "Sleep depreviation!",
+                                        textAlign: TextAlign.left,
+                                        style: TextStyle(
+                                          color:
+                                              Color.fromRGBO(255, 7, 7, 0.86),
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                      ),
+                                      Spacer(),
+                                      Text(
+                                        "12:34 PM",
+                                        textAlign: TextAlign.left,
+                                        style: TextStyle(
+                                          color:
+                                              Color.fromRGBO(38, 38, 38, 0.35),
+                                          fontSize: 10,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                  Text(
+                                    "Mama always said life was like a box of chocolates. You never know what…",
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                      color: Color.fromRGBO(38, 38, 38, 0.59),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
