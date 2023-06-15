@@ -3,10 +3,11 @@
 import 'package:flutter/material.dart';
 import 'package:test_technique/addChild.dart';
 import 'package:test_technique/addProfile.dart';
+import 'package:test_technique/congratsWizardEnd2.dart';
 
-class ConfirmProfile extends StatelessWidget {
-  const ConfirmProfile({Key? key}) : super(key: key);
-  static const routName = '/ConfirmProfile';
+class CongratsWizardEnd extends StatelessWidget {
+  const CongratsWizardEnd({Key? key}) : super(key: key);
+  static const routName = '/congratsWizardEnd';
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +20,12 @@ class ConfirmProfile extends StatelessWidget {
             decoration: const BoxDecoration(
               color: Color.fromRGBO(63, 99, 169, 1),
             ),
-            padding: const EdgeInsets.symmetric(vertical: 60),
+            padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 60),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 7),
                   child: Column(
                     // ignore: prefer_const_literals_to_create_immutables
                     children: <Widget>[
@@ -33,11 +33,23 @@ class ConfirmProfile extends StatelessWidget {
                       //   height: 25,
                       // ),
                       Text(
-                        "Your child’s profile information has been successfully added",
+                        "Congratulation!",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: Color.fromRGBO(255, 255, 255, 1),
+                          color: Color.fromRGBO(255, 255, 255, 0.86),
                           fontSize: 28,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "You have successfully completed you child profile.",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Color.fromRGBO(255, 255, 255, 0.86),
+                          fontSize: 22,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -56,14 +68,40 @@ class ConfirmProfile extends StatelessWidget {
                     ],
                   ),
                 ),
-               
                 Container(
-                  height: MediaQuery.of(context).size.width *2/3,
-                  width: MediaQuery.of(context).size.width *2/3,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/photo2.png'),
-                    ),
+                  height: MediaQuery.of(context).size.width * 2 / 3,
+                  width: MediaQuery.of(context).size.width * 2 / 3,
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        top: 0,
+                        left: 0,
+                        child: Container(
+                          height: MediaQuery.of(context).size.width * 2 / 3,
+                          width: MediaQuery.of(context).size.width * 2 / 3,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('assets/chatting2.png'),
+                            ),
+                          ),
+                        ),
+                        // First image
+                      ),
+                      Positioned(
+                        top: 50,
+                        left: 0,
+                        child: Container(
+                          height: MediaQuery.of(context).size.width * 2 / 3,
+                          width: MediaQuery.of(context).size.width * 2 / 3,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('assets/Vector2.png'),
+                            ),
+                          ),
+                        ),
+                        // Second image
+                      ),
+                    ],
                   ),
                 ),
                 SizedBox(
@@ -74,7 +112,7 @@ class ConfirmProfile extends StatelessWidget {
                   children: [
                     Container(
                       // padding: const EdgeInsets.only(top: 3, left: 3),
-                      
+
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
                       ),
@@ -87,13 +125,12 @@ class ConfirmProfile extends StatelessWidget {
                           //             builder: (context) => SpaceChose()));
                         },
                         color: const Color.fromRGBO(255, 255, 255, 1),
-                        
                         shape: RoundedRectangleBorder(
                           side: const BorderSide(color: Colors.white),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Text(
-                          "Add new profile",
+                          "Add another child",
                           style: TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 18,
@@ -107,7 +144,7 @@ class ConfirmProfile extends StatelessWidget {
                     ),
                     Container(
                       // padding: const EdgeInsets.only(top: 3, left: 3),
-                      
+
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                       ),
@@ -117,10 +154,9 @@ class ConfirmProfile extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => AddChild()));
+                                  builder: (context) => CongratsWizardEnd2()));
                         },
                         color: const Color.fromRGBO(255, 255, 255, 1),
-                        
                         shape: RoundedRectangleBorder(
                           side: const BorderSide(color: Colors.white),
                           borderRadius: BorderRadius.circular(8),
@@ -150,37 +186,6 @@ class ConfirmProfile extends StatelessWidget {
                     ),
                   ],
                 ),
-                
-                 Container(
-                      // padding: const EdgeInsets.only(top: 3, left: 3),
-                      
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      child: FlatButton(
-                        height: 50,
-                        onPressed: () {
-                          //  Navigator.push(
-                          //         context,
-                          //         MaterialPageRoute(
-                          //             builder: (context) => SpaceChose()));
-                        },
-                        color: const Color.fromRGBO(255, 255, 255, 1),
-                        
-                        shape: RoundedRectangleBorder(
-                          side: const BorderSide(color: Colors.white),
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Text(
-                          "Modify profile information",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 18,
-                            color: Color.fromRGBO(63, 119, 182, 1),
-                          ),
-                        ),
-                      ),
-                    ),
               ],
             ),
           ),
