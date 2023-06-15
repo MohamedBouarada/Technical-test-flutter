@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
-  static const routName = '/login';
+class SignupPage extends StatelessWidget {
+  const SignupPage({Key? key}) : super(key: key);
+  static const routName = '/signup';
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +48,7 @@ class LoginPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                LoginCard(),
+                SignupCard(),
               ],
             ),
           ),
@@ -58,14 +58,14 @@ class LoginPage extends StatelessWidget {
   }
 }
 
-class LoginCard extends StatefulWidget {
-  const LoginCard({Key? key}) : super(key: key);
+class SignupCard extends StatefulWidget {
+  const SignupCard({Key? key}) : super(key: key);
 
   @override
-  _LoginCardState createState() => _LoginCardState();
+  _SignupCardState createState() => _SignupCardState();
 }
 
-class _LoginCardState extends State<LoginCard> {
+class _SignupCardState extends State<SignupCard> {
   final GlobalKey<FormState> _formKey = GlobalKey();
   Map<String, String> _authData = {
     'email': '',
@@ -114,18 +114,36 @@ class _LoginCardState extends State<LoginCard> {
                     borderSide: BorderSide(color: Colors.grey[400]!),
                   ),
                 ),
-                validator: (value) {
-                  if (value!.isEmpty || !value.contains('@')) {
-                    return 'Invalid Email';
-                  }
-                },
-                onSaved: (newValue) {
-                  _authData['email'] = newValue!;
-                },
+                validator: (value) {},
+                onSaved: (newValue) {},
                 autovalidateMode: AutovalidateMode.onUserInteraction,
               ),
               SizedBox(
-                height: 30,
+                height: 20,
+              ),
+              TextFormField(
+                keyboardType: TextInputType.emailAddress,
+                style: const TextStyle(
+                    color: Color.fromRGBO(63, 119, 182, 1), fontSize: 14),
+                decoration: InputDecoration(
+                  fillColor: Colors.white,
+                  filled: true,
+                  labelText: 'Email',
+                  contentPadding:
+                      const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey[400]!),
+                      borderRadius: BorderRadius.circular(10)),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey[400]!),
+                  ),
+                ),
+                validator: (value) {},
+                onSaved: (newValue) {},
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+              ),
+              SizedBox(
+                height: 20,
               ),
               TextFormField(
                 style: const TextStyle(
@@ -150,12 +168,70 @@ class _LoginCardState extends State<LoginCard> {
                     return 'Password is invalid';
                   }
                 },
-                onSaved: (newValue) {
-                  _authData['password'] = newValue!;
-                },
+                onSaved: (newValue) {},
               ),
               SizedBox(
-                height: 30,
+                height: 20,
+              ),
+              TextFormField(
+                style: const TextStyle(
+                    color: Color.fromRGBO(63, 119, 182, 1), fontSize: 14),
+                decoration: InputDecoration(
+                  fillColor: Colors.white,
+                  filled: true,
+                  labelText: 'Confirm your password',
+                  contentPadding:
+                      const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey[400]!),
+                      borderRadius: BorderRadius.circular(10)),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey[400]!),
+                  ),
+                ),
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                obscureText: true,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Password is invalid';
+                  }
+                },
+                onSaved: (newValue) {},
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                alignment: Alignment.centerLeft,
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        "I herby accept ",
+                        style: TextStyle(
+                          color: Color.fromRGBO(255, 255, 255, 0.86),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      Text(
+                        "terms and conditions",
+                        // ignore: prefer_const_constructors
+                        style: TextStyle(
+                          color: Color.fromRGBO(255, 255, 255, 0.86),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
               ),
               Container(
                 // padding: const EdgeInsets.only(top: 3, left: 3),
@@ -178,7 +254,7 @@ class _LoginCardState extends State<LoginCard> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const <Widget>[
                       Text(
-                        "Sign in",
+                        "Sign up",
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 18,
@@ -192,22 +268,6 @@ class _LoginCardState extends State<LoginCard> {
                             size: 26.0,
                           ),
                     ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              Container(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "Forgot password?",
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    color: Color.fromRGBO(255, 255, 255, 0.86),
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    decoration: TextDecoration.underline,
                   ),
                 ),
               ),

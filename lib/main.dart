@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors, unused_import
 
 import 'package:flutter/material.dart';
+import 'package:test_technique/signupPage.dart';
 import 'package:test_technique/loginPage.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -27,6 +29,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Flutter Demo BO3 Page'),
+      routes: {
+        LoginPage.routName: (ctx) => LoginPage(),
+        SignupPage.routName: (ctx) => SignupPage(),
+      },
     );
   }
 }
@@ -91,7 +97,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('assets/MicrosoftTeams-image.png'),
-                      
                     ),
                   ),
                 ),
@@ -117,10 +122,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     MaterialButton(
                       minWidth: 310,
                       height: 50,
-                      onPressed: (){
+                      onPressed: () {
                         Navigator.push(
-                context, MaterialPageRoute(builder: (context) => LoginPage()));
-        
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginPage()));
                       },
                       color: const Color.fromRGBO(255, 255, 255, 1),
                       elevation: 10,
@@ -162,7 +168,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     MaterialButton(
                       minWidth: 310,
                       height: 50,
-                      onPressed: (){},
+                      onPressed: () {},
                       color: const Color.fromRGBO(255, 255, 255, 1),
                       elevation: 10,
                       shape: RoundedRectangleBorder(
@@ -203,7 +209,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     MaterialButton(
                       minWidth: 310,
                       height: 50,
-                      onPressed: (){},
+                      onPressed: () {},
                       color: const Color.fromRGBO(255, 255, 255, 1),
                       elevation: 10,
                       shape: RoundedRectangleBorder(
@@ -243,21 +249,22 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Container(
                       alignment: Alignment.centerLeft,
-                      child: Text(
-                      "No account? Sign up",
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                        color: Color.fromRGBO(255, 255, 255, 0.86),
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400,
-                        decoration: TextDecoration.underline,
+                      child: GestureDetector(
+                        onTap: () => Navigator.pushNamed(context, "/signup"),
+                        child: Text(
+                          "No account? Sign up",
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                            color: Color.fromRGBO(255, 255, 255, 0.86),
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
                       ),
-                    ),
                     )
-                  
                   ],
                 ),
-                 
               ],
             ),
           ),
