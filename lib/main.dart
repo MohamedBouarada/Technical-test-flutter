@@ -86,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
             width: double.infinity,
             height: MediaQuery.of(context).size.height,
             decoration: const BoxDecoration(
-              color: Color.fromRGBO(63, 119, 182, 1),
+              color: Color.fromRGBO(63, 99, 169, 1),
             ),
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 120),
             child: Column(

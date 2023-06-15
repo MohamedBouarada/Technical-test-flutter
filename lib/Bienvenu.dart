@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_final_fields, deprecated_member_use, body_might_complete_normally_nullable
 
 import 'package:flutter/material.dart';
+import 'package:test_technique/addDevice.dart';
 
 class Bienvenu extends StatelessWidget {
   const Bienvenu({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class Bienvenu extends StatelessWidget {
             width: double.infinity,
             height: MediaQuery.of(context).size.height,
             decoration: const BoxDecoration(
-              color: Color.fromRGBO(63, 119, 182, 1),
+              color: Color.fromRGBO(63, 99, 169, 1),
             ),
             padding: const EdgeInsets.symmetric(vertical: 120),
             child: Column(
@@ -67,10 +68,10 @@ class Bienvenu extends StatelessWidget {
                     minWidth: 111,
                     height: 50,
                     onPressed: () {
-                      //  Navigator.push(
-                      //         context,
-                      //         MaterialPageRoute(
-                      //             builder: (context) => SpaceChose()));
+                       Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => AddDevice()));
                     },
                     color: const Color.fromRGBO(255, 255, 255, 1),
                     elevation: 10,
@@ -90,7 +91,7 @@ class Bienvenu extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: 15,
+                          width: 7,
                         ),
                         Icon(
                           Icons.keyboard_arrow_right,
