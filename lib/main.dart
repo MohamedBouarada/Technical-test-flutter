@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, unused_import
 
 import 'package:flutter/material.dart';
+import 'package:test_technique/Bienvenu.dart';
 import 'package:test_technique/signupPage.dart';
 import 'package:test_technique/loginPage.dart';
 
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
       routes: {
         LoginPage.routName: (ctx) => LoginPage(),
         SignupPage.routName: (ctx) => SignupPage(),
+        Bienvenu.routName:(ctx) => Bienvenu(),
       },
     );
   }

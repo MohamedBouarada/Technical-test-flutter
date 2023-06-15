@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_final_fields, deprecated_member_use, body_might_complete_normally_nullable
 
 import 'package:flutter/material.dart';
+import 'package:test_technique/spaceChose.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -115,12 +116,12 @@ class _LoginCardState extends State<LoginCard> {
                   ),
                 ),
                 validator: (value) {
-                  if (value!.isEmpty || !value.contains('@')) {
-                    return 'Invalid Email';
-                  }
+                  // if (value!.isEmpty || !value.contains('@')) {
+                  //   return 'Invalid Email';
+                  // }
                 },
                 onSaved: (newValue) {
-                  _authData['email'] = newValue!;
+                  // _authData['email'] = newValue!;
                 },
                 autovalidateMode: AutovalidateMode.onUserInteraction,
               ),
@@ -146,9 +147,9 @@ class _LoginCardState extends State<LoginCard> {
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 obscureText: true,
                 validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'Password is invalid';
-                  }
+                  // if (value!.isEmpty) {
+                  //   return 'Password is invalid';
+                  // }
                 },
                 onSaved: (newValue) {
                   _authData['password'] = newValue!;
@@ -162,12 +163,16 @@ class _LoginCardState extends State<LoginCard> {
                 width: 140,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
-                  
                 ),
                 child: MaterialButton(
                   minWidth: 111,
                   height: 50,
-                  onPressed: () {},
+                  onPressed: () {
+                     Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SpaceChose()));
+                  },
                   color: const Color.fromRGBO(255, 255, 255, 1),
                   elevation: 10,
                   shape: RoundedRectangleBorder(
@@ -186,11 +191,11 @@ class _LoginCardState extends State<LoginCard> {
                         ),
                       ),
                       Spacer(),
-                          Icon(
-                            Icons.keyboard_arrow_right,
-                            color: Color.fromRGBO(63, 119, 182, 1),
-                            size: 26.0,
-                          ),
+                      Icon(
+                        Icons.keyboard_arrow_right,
+                        color: Color.fromRGBO(63, 119, 182, 1),
+                        size: 26.0,
+                      ),
                     ],
                   ),
                 ),
