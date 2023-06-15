@@ -1,7 +1,7 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_import
 
 import 'package:flutter/material.dart';
-
+import 'package:test_technique/loginPage.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -91,6 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('assets/MicrosoftTeams-image.png'),
+                      
                     ),
                   ),
                 ),
@@ -116,7 +117,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     MaterialButton(
                       minWidth: 310,
                       height: 50,
-                      onPressed: (){},
+                      onPressed: (){
+                        Navigator.push(
+                context, MaterialPageRoute(builder: (context) => LoginPage()));
+        
+                      },
                       color: const Color.fromRGBO(255, 255, 255, 1),
                       elevation: 10,
                       shape: RoundedRectangleBorder(
